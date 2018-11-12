@@ -1,10 +1,10 @@
-package com.example.springboottest;
+package com.example.springboottest.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
-import org.springframework.stereotype.Component;
+
 //不加此注解，则监听器不会生效
 // @Component
 public class MyApplicationStartedEventListener implements ApplicationListener {

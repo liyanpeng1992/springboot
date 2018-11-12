@@ -1,4 +1,4 @@
-package com.example.springboottest;
+package com.example.springboottest.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

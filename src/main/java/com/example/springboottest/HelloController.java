@@ -1,14 +1,20 @@
 package com.example.springboottest;
 
+import com.example.springboottest.config.Conf;
+import com.example.springboottest.config.Conf1;
+import com.example.springboottest.config.Conf2;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.core.env.Environment;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/test")
 public class HelloController {
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	/*
 	@RestContriller的意思就是controller里的方法都以Json格式输出
 		不用再写什么jackjson配置了
@@ -28,7 +34,7 @@ public class HelloController {
 	/*@EnableConfigurationProperties注解是用来开启对@ConfigurationProperties注解配置Bean的支持。
 		也就是@EnableConfigurationProperties注解告诉Spring Boot 使能支持@ConfigurationProperties
 
-		可省略！！！  但是必须有get（）方法
+		可省略！！！  但是必须有get（）set（）方法
 		*/
 
 	@Autowired
@@ -41,10 +47,11 @@ public class HelloController {
 
 	@RequestMapping("/hello")
 	public String printHello() {
-		System.out.println(conf);
-		System.out.println(conf1);
-		System.out.println(conf2);
-		return "hello world !";
+		logger.info(conf.toString());
+		logger.info(conf.toString());
+		logger.info(conf.toString());
+
+		return conf1.getName() + "  hello world !";
 	}
 
 }
