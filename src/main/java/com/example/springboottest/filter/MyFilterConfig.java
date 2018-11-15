@@ -17,10 +17,10 @@ public class MyFilterConfig {
 	SpringBoot自动添加了OrderedCharacterEncodingFilter和HiddenHttpMethodFilter
 	 */
 
-	@Bean
-	public RemoteIpFilter remoteIpFilter() {
-		return new RemoteIpFilter();
-	}
+	// @Bean
+	// public RemoteIpFilter remoteIpFilter() {
+	// 	return new RemoteIpFilter();
+	// }
 
 		 /*
 		 共两个步骤：
